@@ -121,6 +121,9 @@ h1 .ital{display:block;color:var(--velours)}
 .sheen{animation:sweep 7s ease-in-out infinite}
 @keyframes sweep{0%,100%{opacity:.5;transform:translateX(0)}50%{opacity:.95;transform:translateX(9px)}}
 
+.jar-photo-wrap{position:relative;width:min(300px,78%);animation:float 11s ease-in-out infinite}
+.jar-photo{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 30px 60px -20px rgba(43,38,33,.35)}
+
 .flip{
   position:absolute;bottom:6px;
   background:transparent;color:var(--velours);
@@ -244,78 +247,10 @@ footer a:hover{color:var(--calcaire-clair)}
 
     <div class="jar-stage rv">
       <div class="halo" aria-hidden="true"></div>
-      <svg class="jar" viewBox="0 0 320 400" role="img" aria-label="Pot en verre dépoli blanc de 30 ml">
-        <defs>
-          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0"    stop-color="#D6D2C8"/>
-            <stop offset=".10"  stop-color="#EFEDE7"/>
-            <stop offset=".34"  stop-color="#FBFAF7"/>
-            <stop offset=".66"  stop-color="#F1EFE9"/>
-            <stop offset=".88"  stop-color="#DAD6CC"/>
-            <stop offset="1"    stop-color="#C7C3B8"/>
-          </linearGradient>
-          <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0"   stop-color="#D2CEC4"/>
-            <stop offset=".14" stop-color="#F7F5F1"/>
-            <stop offset=".46" stop-color="#FDFCFA"/>
-            <stop offset=".78" stop-color="#EDEAE3"/>
-            <stop offset="1"   stop-color="#C6C2B7"/>
-          </linearGradient>
-          <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0"   stop-color="#FFFFFF"/>
-            <stop offset="1"   stop-color="#E7E4DC"/>
-          </linearGradient>
-          <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0"   stop-color="#FFFFFF" stop-opacity=".85"/>
-            <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".22"/>
-            <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
-          </linearGradient>
-          <radialGradient id="shadow" cx=".5" cy=".5" r=".5">
-            <stop offset="0"   stop-color="#2B2621" stop-opacity=".30"/>
-            <stop offset="1"   stop-color="#2B2621" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <ellipse cx="160" cy="352" rx="118" ry="19" fill="url(#shadow)"/>
-
-        <!-- corps -->
-        <path d="M62 132 h196 v168 a26 26 0 0 1 -26 26 h-144 a26 26 0 0 1 -26 -26 z" fill="url(#glass)"/>
-        <ellipse cx="160" cy="132" rx="98" ry="14" fill="#E3E0D8"/>
-
-        <!-- couvercle -->
-        <rect x="54" y="52" width="212" height="74" rx="7" fill="url(#lid)"/>
-        <ellipse cx="160" cy="52" rx="106" ry="13" fill="url(#top)"/>
-        <ellipse cx="160" cy="52" rx="106" ry="13" fill="none" stroke="#BFBBB0" stroke-opacity=".5"/>
-        <rect x="54" y="120" width="212" height="6" rx="3" fill="#B8B4A9" opacity=".4"/>
-
-        <!-- reflet -->
-        <g class="sheen">
-          <rect x="84" y="60" width="15" height="250" rx="8" fill="url(#shine)"/>
-          <rect x="108" y="66" width="5" height="236" rx="3" fill="url(#shine)" opacity=".55"/>
-        </g>
-
-        <!-- FACE AVANT -->
-        <g id="face-avant">
-          <text x="160" y="226" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="21" fill="#4A443C" letter-spacing="1">By <tspan font-style="italic">Julie</tspan></text>
-          <text x="160" y="250" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8.5" fill="#6A6E5E" letter-spacing="3.4">LE SOIN DES COLLINES</text>
-          <line x1="124" y1="264" x2="196" y2="264" stroke="#A9AC9D"/>
-          <text x="160" y="284" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8" fill="#8A8C7E" letter-spacing="2.6">30 ML · PROVENCE</text>
-        </g>
-
-        <!-- FACE ARRIÈRE -->
-        <g id="face-arriere" style="display:none">
-          <text text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="10.5" fill="#4A443C">
-            <tspan x="160" y="176" font-style="italic" font-size="12">L'immortelle ne fane pas.</tspan>
-            <tspan x="160" y="200">Née dans les collines sèches de</tspan>
-            <tspan x="160" y="215">Provence, elle garde sa couleur</tspan>
-            <tspan x="160" y="230">longtemps après la récolte.</tspan>
-            <tspan x="160" y="253">Je l'ai associée à la vitamine B3</tspan>
-            <tspan x="160" y="268">pour faire le soin que je voulais</tspan>
-            <tspan x="160" y="283">utiliser chaque matin.</tspan>
-          </text>
-          <text x="160" y="306" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="13" fill="#6A6E5E">Julie</text>
-        </g>
-      </svg>
+      <div class="jar-photo-wrap">
+        <img id="face-avant" class="jar-photo" src="pot-face.jpg" alt="Pot Le Soin des Collines, face avant avec l'étiquette By Julie, Provence">
+        <img id="face-arriere" class="jar-photo" src="pot-dos.jpg" alt="Dos du pot Le Soin des Collines, texte de présentation de l'immortelle et signature Julie" style="display:none">
+      </div>
 
       <button class="flip" type="button" aria-pressed="false">Voir le dos du pot</button>
     </div>
@@ -447,7 +382,7 @@ document.querySelectorAll('.rv').forEach((el,i)=>{
 });
 
 const btn=document.querySelector('.flip');
-const jar=document.querySelector('.jar');
+const jar=document.querySelector('.jar-photo-wrap');
 const av=document.getElementById('face-avant');
 const ar=document.getElementById('face-arriere');
 let dos=false;
