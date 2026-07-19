@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Soin des Collines — By Julie</title>
+<meta name="description" content="Soin concentré éclat à l'immortelle de Provence et à la niacinamide. Fabriqué en Provence. 30 ml.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,200;1,6..72,300&family=Archivo:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --calcaire:#E9E7E1;
+  --calcaire-clair:#F3F2EE;
+  --fume:#2B2621;
+  --fume-doux:#3D362F;
+  --argent:#A9AC9D;
+  --velours:#6A6E5E;
+  --immortelle:#D6B23C;
+  --trait:rgba(43,38,33,.14);
+
+  --display:"Newsreader",Georgia,serif;
+  --util:"Archivo",system-ui,sans-serif;
+
+  --gut:clamp(20px,5vw,64px);
+  --max:1180px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--calcaire);
+  color:var(--fume);
+  font-family:var(--util);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+
+/* ---------- utilities ---------- */
+.eyebrow{
+  font-family:var(--util);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--velours);
+  margin:0 0 22px;
+}
+.serif{font-family:var(--display);font-weight:300;letter-spacing:-.01em}
+.ital{font-style:italic;font-weight:200}
+.rule{height:1px;background:var(--trait);border:0;margin:0}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.2,.7,.3,1),transform 1s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--calcaire) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--trait);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;height:62px}
+.mark{font-family:var(--display);font-size:19px;letter-spacing:.02em}
+.mark em{font-style:italic;font-weight:200}
+nav{display:flex;gap:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--velours)}
+nav a{text-decoration:none}
+nav a:hover{color:var(--fume)}
+@media(max-width:720px){nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero-in{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(24px,5vw,72px);
+  align-items:center;
+  min-height:min(84vh,760px);
+  padding:clamp(48px,8vw,96px) 0;
+}
+h1{
+  font-family:var(--display);
+  font-weight:200;
+  font-size:clamp(44px,7.4vw,92px);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  margin:0 0 26px;
+}
+h1 .ital{display:block;color:var(--velours)}
+.lede{
+  font-family:var(--display);
+  font-weight:300;
+  font-size:clamp(17px,1.7vw,20px);
+  line-height:1.6;
+  max-width:38ch;
+  color:var(--fume-doux);
+  margin:0 0 34px;
+}
+.meta{display:flex;flex-wrap:wrap;gap:26px;align-items:baseline;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--velours)}
+.meta b{font-family:var(--display);font-size:22px;font-weight:300;letter-spacing:0;text-transform:none;color:var(--fume)}
+
+/* jar */
+.jar-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:420px}
+.halo{
+  position:absolute;width:120%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(214,178,60,.32) 0%,rgba(214,178,60,.10) 38%,transparent 68%);
+  filter:blur(6px);
+  animation:breathe 9s ease-in-out infinite;
+}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.09);opacity:1}}
+.jar{position:relative;width:min(330px,80%);animation:float 11s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.sheen{animation:sweep 7s ease-in-out infinite}
+@keyframes sweep{0%,100%{opacity:.5;transform:translateX(0)}50%{opacity:.95;transform:translateX(9px)}}
+
+.flip{
+  position:absolute;bottom:6px;
+  background:transparent;color:var(--velours);
+  border:1px solid var(--trait);border-radius:0;
+  font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;
+  padding:9px 18px;cursor:pointer;transition:color .3s,border-color .3s;
+}
+.flip:hover{color:var(--fume);border-color:var(--velours)}
+.jar-face{transition:opacity .4s ease}
+
+@media(max-width:860px){
+  .hero-in{grid-template-columns:1fr;text-align:left;min-height:0}
+  .jar-stage{order:-1;min-height:320px}
+  .jar{width:min(250px,62%)}
+}
+
+/* ---------- promesse ---------- */
+.dark{background:var(--fume);color:var(--calcaire-clair)}
+.dark .eyebrow{color:var(--argent)}
+.dark .rule{background:rgba(233,231,225,.16)}
+.sec{padding:clamp(72px,10vw,132px) 0}
+.sec-head{max-width:52ch;margin:0 0 clamp(40px,6vw,72px)}
+.sec-head h2{
+  font-family:var(--display);font-weight:200;
+  font-size:clamp(30px,4.2vw,50px);line-height:1.13;letter-spacing:-.02em;margin:0;
+}
+
+.effets{display:grid;gap:0}
+.effet{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,56px);
+  padding:30px 0;border-top:1px solid rgba(233,231,225,.16);align-items:start;
+}
+.effet:last-child{border-bottom:1px solid rgba(233,231,225,.16)}
+.tps{font-family:var(--display);font-style:italic;font-weight:200;font-size:clamp(17px,2vw,22px);color:var(--immortelle);white-space:nowrap;min-width:5.5em}
+.effet p{margin:0;font-size:clamp(16px,1.6vw,19px);line-height:1.55;color:var(--calcaire-clair);max-width:46ch}
+@media(max-width:600px){.effet{grid-template-columns:1fr;gap:8px}.tps{min-width:0}}
+
+/* ---------- formule ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px)}
+@media(max-width:800px){.duo{grid-template-columns:1fr;gap:44px}}
+.actif h3{font-family:var(--display);font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;margin:0 0 6px;letter-spacing:-.015em}
+.actif .lat{font-family:var(--display);font-style:italic;font-weight:200;color:var(--velours);font-size:15px;margin:0 0 20px}
+.actif p{margin:0;color:var(--fume-doux);max-width:40ch}
+.actif .glyph{margin-bottom:22px}
+
+/* ---------- maison ---------- */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:start}
+@media(max-width:820px){.story{grid-template-columns:1fr}}
+.story p{font-family:var(--display);font-size:clamp(17px,1.8vw,21px);line-height:1.65;color:var(--fume-doux);margin:0 0 20px;max-width:44ch}
+.sign{font-family:var(--display);font-style:italic;font-weight:200;font-size:24px;margin-top:32px;color:var(--fume)}
+
+/* ---------- fiche ---------- */
+.fiche{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--trait)}
+.fiche div{padding:26px 0;border-bottom:1px solid var(--trait)}
+.fiche dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--velours);margin-bottom:8px}
+.fiche dd{margin:0;font-family:var(--display);font-size:20px;font-weight:300}
+@media(max-width:760px){.fiche{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.fiche{grid-template-columns:1fr}}
+
+/* ---------- cta ---------- */
+.cta-in{text-align:center;max-width:620px;margin:0 auto}
+.cta-in h2{font-family:var(--display);font-weight:200;font-size:clamp(30px,4.4vw,52px);line-height:1.1;letter-spacing:-.02em;margin:0 0 18px}
+.cta-in p{color:var(--argent);margin:0 0 36px}
+form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+input[type=email]{
+  flex:1 1 280px;max-width:340px;
+  background:transparent;border:0;border-bottom:1px solid rgba(233,231,225,.35);
+  color:var(--calcaire-clair);font-family:var(--util);font-size:15px;padding:12px 2px;
+}
+input[type=email]::placeholder{color:rgba(233,231,225,.45)}
+input[type=email]:focus{outline:0;border-bottom-color:var(--immortelle)}
+button{
+  background:var(--immortelle);color:var(--fume);border:0;
+  font-family:var(--util);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  padding:15px 30px;cursor:pointer;transition:background .3s;
+}
+button:hover{background:#E4C24E}
+.note{font-size:12px;color:var(--argent);margin-top:22px}
+
+/* ---------- footer ---------- */
+footer{background:var(--fume);color:var(--argent);padding:0 0 56px;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(233,231,225,.16)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--calcaire-clair)}
+
+:focus-visible{outline:2px solid var(--immortelle);outline-offset:3px}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="mark">By <em>Julie</em></div>
+    <nav>
+      <a href="#effets">Le soin</a>
+      <a href="#formule">La formule</a>
+      <a href="#maison">La maison</a>
+      <a href="#reserver">Réserver</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <p class="eyebrow rv">Soin concentré éclat · Provence</p>
+      <h1 class="rv">Le Soin<span class="ital">des Collines</span></h1>
+      <p class="lede rv">Une texture fraîche qui fond sur la peau, la lisse et la réveille. Un seul geste, le matin, et le teint suit.</p>
+      <div class="meta rv">
+        <span>30 ml</span>
+        <span>Verre dépoli</span>
+        <b>39 €</b>
+      </div>
+    </div>
+
+    <div class="jar-stage rv">
+      <div class="halo" aria-hidden="true"></div>
+      <svg class="jar" viewBox="0 0 320 400" role="img" aria-label="Pot en verre dépoli blanc de 30 ml">
+        <defs>
+          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0"    stop-color="#D6D2C8"/>
+            <stop offset=".10"  stop-color="#EFEDE7"/>
+            <stop offset=".34"  stop-color="#FBFAF7"/>
+            <stop offset=".66"  stop-color="#F1EFE9"/>
+            <stop offset=".88"  stop-color="#DAD6CC"/>
+            <stop offset="1"    stop-color="#C7C3B8"/>
+          </linearGradient>
+          <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0"   stop-color="#D2CEC4"/>
+            <stop offset=".14" stop-color="#F7F5F1"/>
+            <stop offset=".46" stop-color="#FDFCFA"/>
+            <stop offset=".78" stop-color="#EDEAE3"/>
+            <stop offset="1"   stop-color="#C6C2B7"/>
+          </linearGradient>
+          <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0"   stop-color="#FFFFFF"/>
+            <stop offset="1"   stop-color="#E7E4DC"/>
+          </linearGradient>
+          <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#FFFFFF" stop-opacity=".85"/>
+            <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".22"/>
+            <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="shadow" cx=".5" cy=".5" r=".5">
+            <stop offset="0"   stop-color="#2B2621" stop-opacity=".30"/>
+            <stop offset="1"   stop-color="#2B2621" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <ellipse cx="160" cy="352" rx="118" ry="19" fill="url(#shadow)"/>
+
+        <!-- corps -->
+        <path d="M62 132 h196 v168 a26 26 0 0 1 -26 26 h-144 a26 26 0 0 1 -26 -26 z" fill="url(#glass)"/>
+        <ellipse cx="160" cy="132" rx="98" ry="14" fill="#E3E0D8"/>
+
+        <!-- couvercle -->
+        <rect x="54" y="52" width="212" height="74" rx="7" fill="url(#lid)"/>
+        <ellipse cx="160" cy="52" rx="106" ry="13" fill="url(#top)"/>
+        <ellipse cx="160" cy="52" rx="106" ry="13" fill="none" stroke="#BFBBB0" stroke-opacity=".5"/>
+        <rect x="54" y="120" width="212" height="6" rx="3" fill="#B8B4A9" opacity=".4"/>
+
+        <!-- reflet -->
+        <g class="sheen">
+          <rect x="84" y="60" width="15" height="250" rx="8" fill="url(#shine)"/>
+          <rect x="108" y="66" width="5" height="236" rx="3" fill="url(#shine)" opacity=".55"/>
+        </g>
+
+        <!-- FACE AVANT -->
+        <g id="face-avant">
+          <text x="160" y="226" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="21" fill="#4A443C" letter-spacing="1">By <tspan font-style="italic">Julie</tspan></text>
+          <text x="160" y="250" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8.5" fill="#6A6E5E" letter-spacing="3.4">LE SOIN DES COLLINES</text>
+          <line x1="124" y1="264" x2="196" y2="264" stroke="#A9AC9D"/>
+          <text x="160" y="284" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8" fill="#8A8C7E" letter-spacing="2.6">30 ML · PROVENCE</text>
+        </g>
+
+        <!-- FACE ARRIÈRE -->
+        <g id="face-arriere" style="display:none">
+          <text text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="10.5" fill="#4A443C">
+            <tspan x="160" y="176" font-style="italic" font-size="12">L'immortelle ne fane pas.</tspan>
+            <tspan x="160" y="200">Née dans les collines sèches de</tspan>
+            <tspan x="160" y="215">Provence, elle garde sa couleur</tspan>
+            <tspan x="160" y="230">longtemps après la récolte.</tspan>
+            <tspan x="160" y="253">Je l'ai associée à la vitamine B3</tspan>
+            <tspan x="160" y="268">pour faire le soin que je voulais</tspan>
+            <tspan x="160" y="283">utiliser chaque matin.</tspan>
+          </text>
+          <text x="160" y="306" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="13" fill="#6A6E5E">Julie</text>
+        </g>
+      </svg>
+
+      <button class="flip" type="button" aria-pressed="false">Voir le dos du pot</button>
+    </div>
+  </div>
+</section>
+
+<!-- EFFETS -->
+<section class="dark" id="effets">
+  <div class="wrap sec">
+    <div class="sec-head rv">
+      <p class="eyebrow">Le matin</p>
+      <h2>Ce que la peau fait dans les minutes qui suivent.</h2>
+    </div>
+
+    <div class="effets">
+      <div class="effet rv"><div class="tps">À l'application</div><p>La texture fraîche fond immédiatement. Pas de film, pas de tiraillement, rien à faire pénétrer longuement.</p></div>
+      <div class="effet rv"><div class="tps">Après 1 minute</div><p>Le grain de peau paraît plus lisse, les petites irrégularités s'estompent, le teint s'éclaire.</p></div>
+      <div class="effet rv"><div class="tps">Fini</div><p>Velouté et net. Ça ne colle pas, ça ne peluche pas — le maquillage se pose juste après.</p></div>
+      <div class="effet rv"><div class="tps">Jour après jour</div><p>La peau est confortable, plus régulière, plus lumineuse. Un seul produit, tous les matins.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULE -->
+<section id="formule">
+  <div class="wrap sec">
+    <div class="sec-head rv">
+      <p class="eyebrow">La formule</p>
+      <h2>Deux actifs, choisis pour ce qu'ils font ensemble.</h2>
+    </div>
+
+    <div class="duo">
+      <div class="actif rv">
+        <svg class="glyph" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+          <circle cx="23" cy="23" r="6.5" fill="#D6B23C"/>
+          <g stroke="#D6B23C" stroke-width="1.5" fill="none">
+            <path d="M23 16V4M23 30v12M16 23H4M30 23h12M18 18 9.5 9.5M28 28l8.5 8.5M28 18l8.5-8.5M18 28 9.5 36.5"/>
+          </g>
+        </svg>
+        <h3>Immortelle</h3>
+        <p class="lat">Helichrysum italicum</p>
+        <p>La fleur des collines sèches, qui garde sa couleur une fois coupée. Une plante emblématique de la Méditerranée, récoltée ici, et le cœur de ce soin.</p>
+      </div>
+
+      <div class="actif rv">
+        <svg class="glyph" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+          <circle cx="23" cy="23" r="17" fill="none" stroke="#6A6E5E" stroke-width="1.5"/>
+          <circle cx="23" cy="23" r="9" fill="none" stroke="#6A6E5E" stroke-width="1.5"/>
+          <circle cx="23" cy="23" r="3" fill="#6A6E5E"/>
+        </svg>
+        <h3>Niacinamide</h3>
+        <p class="lat">Vitamine B3</p>
+        <p>L'actif qui travaille la qualité de la peau dans la durée : éclat, régularité du teint, confort. C'est lui qui fait la différence au fil des semaines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- MAISON -->
+<section id="maison">
+  <div class="wrap sec">
+    <div class="story">
+      <div class="rv">
+        <p class="eyebrow">La maison</p>
+        <h2 class="serif" style="font-size:clamp(30px,4.2vw,50px);font-weight:200;line-height:1.13;margin:0;letter-spacing:-.02em">Je voulais le soin que j'avais envie d'utiliser tous les matins.</h2>
+      </div>
+      <div class="rv">
+        <p>Pas une crème de plus. Un produit qui hydrate, oui, mais qui donne tout de suite une peau plus belle — et qui donne envie d'être appliqué.</p>
+        <p>Je l'ai imaginé pour les femmes qui ont une vie remplie et qui ne veulent pas passer une heure devant leur miroir. Efficace, rapide, et agréable. Les trois à la fois.</p>
+        <p>Tout se fait en Provence : la formule, la fabrication, le remplissage. Le pot en verre dépoli blanc, la senteur légère et fraîche font partie du soin autant que la texture.</p>
+        <p class="sign">Julie</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FICHE -->
+<section>
+  <div class="wrap" style="padding-bottom:clamp(72px,10vw,120px)">
+    <p class="eyebrow rv">Le produit</p>
+    <dl class="fiche rv">
+      <div><dt>Contenance</dt><dd>30 ml</dd></div>
+      <div><dt>Contenant</dt><dd>Verre dépoli blanc</dd></div>
+      <div><dt>Fabrication</dt><dd>Provence, France</dd></div>
+      <div><dt>Prix</dt><dd>39 €</dd></div>
+      <div><dt>Usage</dt><dd>Le matin</dd></div>
+      <div><dt>Peaux</dt><dd>Toutes</dd></div>
+      <div><dt>Geste</dt><dd>Une noisette</dd></div>
+      <div><dt>Durée</dt><dd>Environ 2 mois</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="dark" id="reserver">
+  <div class="wrap sec">
+    <div class="cta-in rv">
+      <p class="eyebrow">Premières séries</p>
+      <h2>Soyez prévenue de l'ouverture.</h2>
+      <p>Les premiers pots partent en série limitée, en pharmacie en Provence et ici. Laissez votre adresse, nous vous écrivons quand ils arrivent.</p>
+      <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:Newsreader,serif;font-size:22px;font-style:italic;color:#E9E7E1;margin:0\'>C\'est noté. À très vite.</p>'">
+        <label for="mail" style="position:absolute;left:-9999px">Adresse e-mail</label>
+        <input id="mail" type="email" required placeholder="votre@email.fr">
+        <button type="submit">Me prévenir</button>
+      </form>
+      <p class="note">Une seule adresse, aucun partage, désinscription en un clic.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="mark" style="color:var(--calcaire-clair)">By <em>Julie</em></div>
+    <div>Le Soin des Collines · 30 ml · Fabriqué en Provence</div>
+    <div><a href="#">Mentions légales</a> · <a href="#">Contact</a> · <a href="#">Instagram</a></div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+
+document.querySelectorAll('.rv').forEach((el,i)=>{
+  el.style.transitionDelay=(Math.min(i,6)*70)+'ms';
+  io.observe(el);
+});
+
+const btn=document.querySelector('.flip');
+const jar=document.querySelector('.jar');
+const av=document.getElementById('face-avant');
+const ar=document.getElementById('face-arriere');
+let dos=false;
+btn.addEventListener('click',()=>{
+  dos=!dos;
+  jar.style.transition='transform .45s ease';
+  jar.style.transform='scaleX(.04)';
+  setTimeout(()=>{
+    av.style.display=dos?'none':'';
+    ar.style.display=dos?'':'none';
+    jar.style.transform='scaleX(1)';
+  },300);
+  btn.textContent=dos?'Voir la face avant':'Voir le dos du pot';
+  btn.setAttribute('aria-pressed',dos);
+});
+</script>
+</body>
+</html>
