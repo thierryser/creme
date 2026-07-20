@@ -118,7 +118,7 @@ h1{
   animation:breathe 9s ease-in-out infinite;
 }
 @keyframes breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.09);opacity:1}}
-.jar{position:relative;width:min(300px,78%);animation:float 11s ease-in-out infinite}
+.jar{position:relative;width:min(300px,78%);animation:float 11s ease-in-out infinite;display:block;border-radius:4px;box-shadow:0 40px 70px -24px rgba(43,32,19,.45)}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .sheen{animation:sweep 7s ease-in-out infinite}
 @keyframes sweep{0%,100%{opacity:.5;transform:translateX(0)}50%{opacity:.95;transform:translateX(9px)}}
@@ -167,14 +167,14 @@ h1{
 .col li{position:relative;padding-left:22px;font-family:var(--display);font-size:clamp(16.5px,1.6vw,18.5px);color:var(--ink-soft)}
 .col li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:1px;background:var(--terracotta)}
 
-.jar-illus-wrap{margin:8px 0 28px;padding:clamp(28px,5vw,44px) clamp(20px,4vw,32px);background:var(--card);border:1px solid var(--trait)}
-.jar-illus{width:min(220px,100%);margin:0 auto}
+.jar-illus-wrap{margin:8px 0 28px;padding:clamp(10px,2vw,14px);background:var(--card);border:1px solid var(--trait)}
+.jar-illus{width:100%;display:block;border-radius:2px}
 
-.sprig{position:absolute;opacity:.55}
-.sprig.top-right{top:-10px;right:0;width:120px}
+.sprig{position:absolute;opacity:.6;mix-blend-mode:multiply}
+.sprig.top-right{top:-10px;right:0;width:130px;border-radius:0}
 
-.deco{margin:28px 0;padding:clamp(20px,4vw,32px) 0}
-.deco svg{width:min(260px,100%);margin:0 auto}
+.deco{margin:28px 0}
+.deco img{width:100%;display:block;border-radius:2px}
 
 .quote{
   margin:32px 0 8px;padding:clamp(26px,4vw,38px);
@@ -264,64 +264,7 @@ footer a:hover{color:var(--paper)}
 
     <div class="jar-stage rv">
       <div class="halo" aria-hidden="true"></div>
-      <svg class="jar" viewBox="0 0 320 400" role="img" aria-label="Pot AUBE, crème visage à l'immortelle, verre ambré et couvercle noir">
-        <defs>
-          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0"    stop-color="#2E1C0E"/>
-            <stop offset=".14"  stop-color="#57371C"/>
-            <stop offset=".38"  stop-color="#7A5128"/>
-            <stop offset=".64"  stop-color="#6B4423"/>
-            <stop offset=".86"  stop-color="#4A2E16"/>
-            <stop offset="1"    stop-color="#2A1A0C"/>
-          </linearGradient>
-          <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0"   stop-color="#0C0906"/>
-            <stop offset=".5"  stop-color="#231A12"/>
-            <stop offset="1"   stop-color="#0C0906"/>
-          </linearGradient>
-          <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0"   stop-color="#3A2A1C"/>
-            <stop offset="1"   stop-color="#120D08"/>
-          </linearGradient>
-          <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0"   stop-color="#FFFFFF" stop-opacity=".35"/>
-            <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".08"/>
-            <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
-          </linearGradient>
-          <radialGradient id="shadow" cx=".5" cy=".5" r=".5">
-            <stop offset="0"   stop-color="#2B2013" stop-opacity=".30"/>
-            <stop offset="1"   stop-color="#2B2013" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <ellipse cx="160" cy="352" rx="118" ry="19" fill="url(#shadow)"/>
-
-        <!-- corps -->
-        <path d="M62 132 h196 v168 a26 26 0 0 1 -26 26 h-144 a26 26 0 0 1 -26 -26 z" fill="url(#glass)"/>
-        <ellipse cx="160" cy="132" rx="98" ry="14" fill="#3A2614"/>
-
-        <!-- couvercle -->
-        <rect x="54" y="52" width="212" height="74" rx="7" fill="url(#lid)"/>
-        <ellipse cx="160" cy="52" rx="106" ry="13" fill="url(#top)"/>
-        <ellipse cx="160" cy="52" rx="106" ry="13" fill="none" stroke="#000" stroke-opacity=".5"/>
-        <rect x="54" y="120" width="212" height="6" rx="3" fill="#000" opacity=".35"/>
-
-        <!-- reflet -->
-        <g class="sheen">
-          <rect x="84" y="60" width="15" height="250" rx="8" fill="url(#shine)"/>
-          <rect x="108" y="66" width="5" height="236" rx="3" fill="url(#shine)" opacity=".55"/>
-        </g>
-
-        <!-- étiquette -->
-        <rect x="90" y="192" width="140" height="112" fill="#F1E9DA" opacity=".97"/>
-        <text x="160" y="222" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="20" letter-spacing="2" fill="#2B2013">AUBE</text>
-        <line x1="132" y1="232" x2="188" y2="232" stroke="#B85C2E"/>
-        <text x="160" y="248" text-anchor="middle" font-family="Archivo, sans-serif" font-size="6" fill="#4A3826" letter-spacing="1.2">CRÈME VISAGE À L'IMMORTELLE</text>
-        <text x="160" y="260" text-anchor="middle" font-family="Archivo, sans-serif" font-size="6" fill="#A68A63" letter-spacing="1.6">NOURRIT · PROTÈGE · APAISE</text>
-        <text x="160" y="278" text-anchor="middle" font-family="Archivo, sans-serif" font-size="5.5" fill="#4A3826" letter-spacing="1">IMMORTELLE SAUVAGE</text>
-        <text x="160" y="288" text-anchor="middle" font-family="Archivo, sans-serif" font-size="5.5" fill="#4A3826" letter-spacing="1">DE MÉDITERRANÉE</text>
-        <text x="160" y="300" text-anchor="middle" font-family="Archivo, sans-serif" font-size="6" fill="#A68A63" letter-spacing="1.8">BY MAISON · J</text>
-      </svg>
+      <img class="jar" src="aube-pot.jpg" alt="Pot AUBE ouvert, crème visage à l'immortelle, verre ambré et couvercle noir, posé sur une pierre en Provence">
     </div>
   </div>
 </section>
@@ -349,19 +292,7 @@ footer a:hover{color:var(--paper)}
     <div class="hist-head rv">
       <p class="eyebrow">Mon histoire</p>
       <h2>Une histoire<br>de lumière</h2>
-      <svg class="sprig top-right" viewBox="0 0 120 140" aria-hidden="true">
-        <g fill="none" stroke="#A68A63" stroke-width="1">
-          <path d="M60 138 C58 100 62 60 66 8"/>
-          <path d="M66 40 C78 34 88 24 92 10"/>
-          <path d="M63 60 C50 55 40 46 34 32"/>
-          <path d="M65 84 C76 80 85 72 90 60"/>
-        </g>
-        <g fill="#A68A63" opacity=".8">
-          <circle cx="92" cy="9" r="3"/><circle cx="100" cy="14" r="2.4"/><circle cx="86" cy="16" r="2.2"/>
-          <circle cx="33" cy="31" r="2.6"/><circle cx="26" cy="26" r="2.1"/>
-          <circle cx="90" cy="59" r="2.6"/><circle cx="98" cy="54" r="2"/>
-        </g>
-      </svg>
+      <img class="sprig top-right" src="aube-brindille.jpg" alt="" aria-hidden="true">
     </div>
 
     <div class="spread">
@@ -371,27 +302,7 @@ footer a:hover{color:var(--paper)}
         <p>Une peau lumineuse ne se résume jamais à une liste d'ingrédients. C'est une peau respectée, nourrie, accompagnée avec justesse.</p>
 
         <div class="jar-illus-wrap">
-          <svg class="jar-illus" viewBox="0 0 220 260" role="img" aria-label="Pot AUBE ouvert, crème visible, couvercle posé à côté">
-            <defs>
-              <linearGradient id="glass2" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#2E1C0E"/><stop offset=".4" stop-color="#7A5128"/><stop offset="1" stop-color="#2A1A0C"/>
-              </linearGradient>
-              <radialGradient id="cream" cx=".4" cy=".3" r=".8">
-                <stop offset="0" stop-color="#FFFDF7"/><stop offset="1" stop-color="#E6DCC4"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="150" cy="238" rx="46" ry="8" fill="#2B2013" opacity=".18"/>
-            <ellipse cx="60" cy="230" rx="34" ry="7" fill="#2B2013" opacity=".12"/>
-            <!-- lid tilted -->
-            <ellipse cx="58" cy="212" rx="36" ry="11" fill="#0C0906"/>
-            <ellipse cx="58" cy="206" rx="36" ry="11" fill="#231A12"/>
-            <!-- jar -->
-            <path d="M104 130 h92 v78 a24 24 0 0 1 -24 24 h-44 a24 24 0 0 1 -24 -24 z" fill="url(#glass2)"/>
-            <path d="M100 118 C100 106 116 98 150 98 C184 98 200 106 200 118 C200 128 184 134 150 134 C116 134 100 128 100 118 Z" fill="url(#cream)"/>
-            <path d="M112 112 C118 104 132 100 150 100 C168 100 180 104 186 110" fill="none" stroke="#F6EFE0" stroke-width="2" opacity=".8"/>
-            <text x="150" y="196" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" letter-spacing="1.6" fill="#F1E9DA">AUBE</text>
-            <text x="150" y="212" text-anchor="middle" font-family="Archivo, sans-serif" font-size="5" letter-spacing="1" fill="#D8CDB6">NOURRIT · PROTÈGE · APAISE</text>
-          </svg>
+          <img class="jar-illus" src="aube-pot.jpg" alt="Pot AUBE ouvert, crème visible, couvercle posé à côté, entouré de poteries et d'immortelle séchée">
         </div>
 
         <p>Après toutes ces années d'expérience, une évidence s'est imposée à moi : créer le soin que j'avais toujours rêvé d'utiliser moi-même.</p>
@@ -426,24 +337,7 @@ footer a:hover{color:var(--paper)}
         <p class="lines">La chaleur douce des premiers rayons.<br>La lumière dorée qui caresse la peau.<br>Le calme. L'air encore frais.<br>Cette énergie solaire qui nous accompagne toute la journée.<br>J'avais envie d'enfermer un peu de cette lumière dans un pot.</p>
 
         <div class="deco">
-          <svg viewBox="0 0 260 180" role="img" aria-label="Poterie provençale et brindilles séchées">
-            <g fill="none" stroke="#8A6A42" stroke-width="1.2">
-              <path d="M50 170 V110 C50 96 40 92 40 78 C40 62 56 54 56 40 C56 30 50 26 50 18" />
-              <ellipse cx="50" cy="18" rx="14" ry="6"/>
-              <path d="M36 78 h-16" /><path d="M64 92 h16" />
-            </g>
-            <g fill="none" stroke="#A68A63" stroke-width="1">
-              <path d="M150 170 C150 120 156 70 168 20"/>
-              <path d="M168 50 C182 44 194 32 200 16"/>
-              <path d="M156 90 C142 84 130 74 122 58"/>
-              <path d="M162 118 C176 112 188 100 194 84"/>
-            </g>
-            <g fill="#C97A44" opacity=".85">
-              <circle cx="200" cy="15" r="3"/><circle cx="208" cy="20" r="2.4"/><circle cx="192" cy="22" r="2.2"/>
-              <circle cx="121" cy="57" r="2.6"/><circle cx="114" cy="52" r="2"/>
-              <circle cx="194" cy="83" r="2.6"/><circle cx="202" cy="78" r="2"/>
-            </g>
-          </svg>
+          <img src="aube-poterie.jpg" alt="Poterie en terre cuite et petit vase artisanal garni d'immortelle séchée, contre un mur en pierre de Provence">
         </div>
 
         <p>Qu'à chaque application, chaque femme retrouve ce moment suspendu. Quelques secondes pour elle, où le soin devient un rituel, un souffle de douceur, une promesse d'éclat.</p>
@@ -461,16 +355,7 @@ footer a:hover{color:var(--paper)}
         </div>
 
         <div class="deco">
-          <svg viewBox="0 0 220 110" role="img" aria-label="Bols en céramique avec fleurs séchées">
-            <ellipse cx="70" cy="86" rx="52" ry="16" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
-            <path d="M18 86 C18 74 42 68 70 68 C98 68 122 74 122 86" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
-            <ellipse cx="150" cy="70" rx="36" ry="11" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
-            <path d="M114 70 C114 61 130 56 150 56 C170 56 186 61 186 70" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
-            <g fill="#C97A44" opacity=".85">
-              <circle cx="140" cy="60" r="2.4"/><circle cx="148" cy="56" r="2"/><circle cx="156" cy="61" r="2.2"/>
-              <circle cx="60" cy="74" r="2"/><circle cx="70" cy="72" r="2.4"/>
-            </g>
-          </svg>
+          <img src="aube-bols.jpg" alt="Deux bols en céramique artisanale sur du lin froissé, l'un contenant des fleurs d'immortelle séchées">
         </div>
       </div>
     </div>
