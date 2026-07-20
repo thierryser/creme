@@ -162,6 +162,9 @@ h1{
 .col p{font-family:var(--display);font-size:clamp(16.5px,1.6vw,18.5px);line-height:1.7;color:var(--ink-soft);margin:0 0 22px;max-width:46ch}
 .col p.lines{margin-bottom:0}
 .col p.lines + p.lines{margin-top:0}
+.col p.drop::first-letter{float:left;font-size:3.6em;line-height:.78;padding:5px 10px 0 0;font-weight:300;color:var(--terracotta)}
+.col p.col-break{text-align:center;color:var(--sable);letter-spacing:.4em;font-size:12px;margin:4px 0 30px;max-width:none}
+@media(max-width:860px){.col p{margin-bottom:26px}}
 .col strong{display:block;font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,22px);color:var(--ink);margin:6px 0 10px}
 .col ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
 .col li{position:relative;padding-left:22px;font-family:var(--display);font-size:clamp(16.5px,1.6vw,18.5px);color:var(--ink-soft)}
@@ -298,11 +301,11 @@ footer a:hover{color:var(--paper)}
     <div class="spread">
       <!-- page 1 -->
       <div class="col rv">
-        <p>Depuis plus de 17 ans, je prends soin de la peau des femmes. Au fil des années, à travers chaque soin, chaque massage facialiste et chaque rencontre, j'ai appris à écouter la peau, à comprendre ses besoins, mais aussi à observer ce qui la révèle vraiment.</p>
+        <p class="drop">Depuis plus de 17 ans, je prends soin de la peau des femmes. Au fil des années, à travers chaque soin, chaque massage facialiste et chaque rencontre, j'ai appris à écouter la peau, à comprendre ses besoins, mais aussi à observer ce qui la révèle vraiment.</p>
         <p>Une peau lumineuse ne se résume jamais à une liste d'ingrédients. C'est une peau respectée, nourrie, accompagnée avec justesse.</p>
 
         <div class="jar-illus-wrap">
-          <img class="jar-illus" src="aube-pot.jpg" alt="Pot AUBE ouvert, crème visible, couvercle posé à côté, entouré de poteries et d'immortelle séchée">
+          <img class="jar-illus" src="aube-pot-detail.jpg" alt="Gros plan sur le pot AUBE ouvert, étiquette et texture de la crème">
         </div>
 
         <p>Après toutes ces années d'expérience, une évidence s'est imposée à moi : créer le soin que j'avais toujours rêvé d'utiliser moi-même.</p>
@@ -327,6 +330,7 @@ footer a:hover{color:var(--paper)}
 
       <!-- page 2 -->
       <div class="col rv">
+        <p class="col-break" aria-hidden="true">· · ·</p>
         <p>Je l'ai associée à la niacinamide, un actif incontournable pour lisser le grain de peau, renforcer la barrière cutanée, unifier le teint et révéler durablement son éclat naturel.</p>
         <p>Cette association est née de mon expérience du terrain, de centaines de visages observés et soignés au fil des années.</p>
 
