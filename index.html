@@ -3,21 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Le Soin des Collines — By Julie</title>
-<meta name="description" content="Soin concentré éclat à l'immortelle de Provence et à la niacinamide. Fabriqué en Provence. 30 ml.">
+<title>AUBE — Crème visage à l'immortelle · Maison J</title>
+<meta name="description" content="AUBE, crème visage à l'immortelle sauvage de Méditerranée et à la niacinamide. Un concentré de lumière inspiré par la Provence. Maison J, 30 ml.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,200;1,6..72,300&family=Archivo:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,200;1,6..72,300;1,6..72,400&family=Archivo:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --calcaire:#E9E7E1;
-  --calcaire-clair:#F3F2EE;
-  --fume:#2B2621;
-  --fume-doux:#3D362F;
-  --argent:#A9AC9D;
-  --velours:#6A6E5E;
-  --immortelle:#D6B23C;
-  --trait:rgba(43,38,33,.14);
+  --paper:#F1E9DA;
+  --paper-deep:#E7DCC3;
+  --card:#FBF7EE;
+  --ink:#2B2013;
+  --ink-soft:#4A3826;
+  --sable:#A68A63;
+  --terracotta:#B85C2E;
+  --terracotta-soft:#C97A44;
+  --or:#D6B23C;
+  --trait:rgba(43,32,19,.16);
 
   --display:"Newsreader",Georgia,serif;
   --util:"Archivo",system-ui,sans-serif;
@@ -30,8 +32,8 @@
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
-  background:var(--calcaire);
-  color:var(--fume);
+  background:var(--paper);
+  color:var(--ink);
   font-family:var(--util);
   font-weight:300;
   font-size:16px;
@@ -50,12 +52,12 @@ a{color:inherit}
   font-weight:500;
   letter-spacing:.24em;
   text-transform:uppercase;
-  color:var(--velours);
+  color:var(--sable);
   margin:0 0 22px;
 }
 .serif{font-family:var(--display);font-weight:300;letter-spacing:-.01em}
 .ital{font-style:italic;font-weight:200}
-.rule{height:1px;background:var(--trait);border:0;margin:0}
+.rule{height:1px;background:var(--trait);border:0;margin:28px 0}
 
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.2,.7,.3,1),transform 1s cubic-bezier(.2,.7,.3,1)}
@@ -64,16 +66,16 @@ a{color:inherit}
 /* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:20;
-  background:color-mix(in srgb,var(--calcaire) 88%,transparent);
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--trait);
 }
 .bar{display:flex;align-items:center;justify-content:space-between;height:62px}
-.mark{font-family:var(--display);font-size:19px;letter-spacing:.02em}
-.mark em{font-style:italic;font-weight:200}
-nav{display:flex;gap:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--velours)}
+.mark{font-family:var(--display);font-size:19px;letter-spacing:.03em;text-transform:uppercase}
+.mark em{font-style:italic;font-weight:200;text-transform:none;color:var(--sable)}
+nav{display:flex;gap:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sable)}
 nav a{text-decoration:none}
-nav a:hover{color:var(--fume)}
+nav a:hover{color:var(--ink)}
 @media(max-width:720px){nav{display:none}}
 
 /* ---------- hero ---------- */
@@ -89,61 +91,48 @@ nav a:hover{color:var(--fume)}
 h1{
   font-family:var(--display);
   font-weight:200;
-  font-size:clamp(44px,7.4vw,92px);
-  line-height:1.02;
-  letter-spacing:-.025em;
-  margin:0 0 26px;
+  font-size:clamp(56px,9vw,120px);
+  line-height:.98;
+  letter-spacing:.01em;
+  text-transform:uppercase;
+  margin:0 0 22px;
 }
-h1 .ital{display:block;color:var(--velours)}
 .lede{
   font-family:var(--display);
   font-weight:300;
   font-size:clamp(17px,1.7vw,20px);
   line-height:1.6;
   max-width:38ch;
-  color:var(--fume-doux);
+  color:var(--ink-soft);
   margin:0 0 34px;
 }
-.meta{display:flex;flex-wrap:wrap;gap:26px;align-items:baseline;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--velours)}
-.meta b{font-family:var(--display);font-size:22px;font-weight:300;letter-spacing:0;text-transform:none;color:var(--fume)}
+.meta{display:flex;flex-wrap:wrap;gap:26px;align-items:baseline;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sable)}
+.meta b{font-family:var(--display);font-size:22px;font-weight:300;letter-spacing:0;text-transform:none;color:var(--ink)}
 
 /* jar */
-.jar-stage{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;min-height:420px}
+.jar-stage{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px;min-height:420px}
 .halo{
   position:absolute;width:120%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(214,178,60,.32) 0%,rgba(214,178,60,.10) 38%,transparent 68%);
+  background:radial-gradient(circle,rgba(184,92,46,.28) 0%,rgba(214,178,60,.12) 40%,transparent 70%);
   filter:blur(6px);
   animation:breathe 9s ease-in-out infinite;
 }
 @keyframes breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.09);opacity:1}}
-.jar{position:relative;width:min(330px,80%);animation:float 11s ease-in-out infinite}
+.jar{position:relative;width:min(300px,78%);animation:float 11s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .sheen{animation:sweep 7s ease-in-out infinite}
 @keyframes sweep{0%,100%{opacity:.5;transform:translateX(0)}50%{opacity:.95;transform:translateX(9px)}}
 
-.jar-photo-wrap{position:relative;width:min(300px,78%);animation:float 11s ease-in-out infinite}
-.jar-photo{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 30px 60px -20px rgba(43,38,33,.35)}
-
-.flip{
-  position:relative;z-index:1;
-  background:transparent;color:var(--velours);
-  border:1px solid var(--trait);border-radius:0;
-  font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;
-  padding:9px 18px;cursor:pointer;transition:color .3s,border-color .3s;
-}
-.flip:hover{color:var(--fume);border-color:var(--velours)}
-.jar-face{transition:opacity .4s ease}
-
 @media(max-width:860px){
   .hero-in{grid-template-columns:1fr;text-align:left;min-height:0}
   .jar-stage{order:-1;min-height:320px}
-  .jar{width:min(250px,62%)}
+  .jar{width:min(240px,60%)}
 }
 
-/* ---------- promesse ---------- */
-.dark{background:var(--fume);color:var(--calcaire-clair)}
-.dark .eyebrow{color:var(--argent)}
-.dark .rule{background:rgba(233,231,225,.16)}
+/* ---------- promesse (dark) ---------- */
+.dark{background:var(--ink);color:var(--paper)}
+.dark .eyebrow{color:var(--or)}
+.dark .rule{background:rgba(241,233,218,.16)}
 .sec{padding:clamp(72px,10vw,132px) 0}
 .sec-head{max-width:52ch;margin:0 0 clamp(40px,6vw,72px)}
 .sec-head h2{
@@ -154,31 +143,59 @@ h1 .ital{display:block;color:var(--velours)}
 .effets{display:grid;gap:0}
 .effet{
   display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,56px);
-  padding:30px 0;border-top:1px solid rgba(233,231,225,.16);align-items:start;
+  padding:30px 0;border-top:1px solid rgba(241,233,218,.16);align-items:start;
 }
-.effet:last-child{border-bottom:1px solid rgba(233,231,225,.16)}
-.tps{font-family:var(--display);font-style:italic;font-weight:200;font-size:clamp(17px,2vw,22px);color:var(--immortelle);white-space:nowrap;min-width:5.5em}
-.effet p{margin:0;font-size:clamp(16px,1.6vw,19px);line-height:1.55;color:var(--calcaire-clair);max-width:46ch}
+.effet:last-child{border-bottom:1px solid rgba(241,233,218,.16)}
+.tps{font-family:var(--display);font-style:italic;font-weight:200;font-size:clamp(17px,2vw,22px);color:var(--or);white-space:nowrap;min-width:5.5em}
+.effet p{margin:0;font-size:clamp(16px,1.6vw,19px);line-height:1.55;color:var(--paper);max-width:46ch}
 @media(max-width:600px){.effet{grid-template-columns:1fr;gap:8px}.tps{min-width:0}}
+
+/* ---------- histoire (magazine spread) ---------- */
+#histoire{position:relative}
+.hist-head{max-width:56ch;margin:0 0 clamp(44px,7vw,80px);position:relative}
+.hist-head h2{
+  font-family:var(--display);font-weight:200;font-size:clamp(36px,5.4vw,64px);
+  line-height:1.06;letter-spacing:-.02em;margin:10px 0 0;
+}
+.spread{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px)}
+@media(max-width:860px){.spread{grid-template-columns:1fr}}
+.col p{font-family:var(--display);font-size:clamp(16.5px,1.6vw,18.5px);line-height:1.7;color:var(--ink-soft);margin:0 0 22px;max-width:46ch}
+.col p.lines{margin-bottom:0}
+.col p.lines + p.lines{margin-top:0}
+.col strong{display:block;font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,22px);color:var(--ink);margin:6px 0 10px}
+.col ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.col li{position:relative;padding-left:22px;font-family:var(--display);font-size:clamp(16.5px,1.6vw,18.5px);color:var(--ink-soft)}
+.col li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:1px;background:var(--terracotta)}
+
+.jar-illus-wrap{margin:8px 0 28px;padding:clamp(28px,5vw,44px) clamp(20px,4vw,32px);background:var(--card);border:1px solid var(--trait)}
+.jar-illus{width:min(220px,100%);margin:0 auto}
+
+.sprig{position:absolute;opacity:.55}
+.sprig.top-right{top:-10px;right:0;width:120px}
+
+.deco{margin:28px 0;padding:clamp(20px,4vw,32px) 0}
+.deco svg{width:min(260px,100%);margin:0 auto}
+
+.quote{
+  margin:32px 0 8px;padding:clamp(26px,4vw,38px);
+  background:var(--ink);color:var(--paper);
+}
+.quote p{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(18px,2vw,22px);line-height:1.55;color:var(--paper);margin:0}
+.quote p+p{margin-top:14px}
+.quote p:last-child{color:var(--or)}
 
 /* ---------- formule ---------- */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px)}
 @media(max-width:800px){.duo{grid-template-columns:1fr;gap:44px}}
 .actif h3{font-family:var(--display);font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;margin:0 0 6px;letter-spacing:-.015em}
-.actif .lat{font-family:var(--display);font-style:italic;font-weight:200;color:var(--velours);font-size:15px;margin:0 0 20px}
-.actif p{margin:0;color:var(--fume-doux);max-width:40ch}
+.actif .lat{font-family:var(--display);font-style:italic;font-weight:200;color:var(--sable);font-size:15px;margin:0 0 20px}
+.actif p{margin:0;color:var(--ink-soft);max-width:40ch}
 .actif .glyph{margin-bottom:22px}
-
-/* ---------- maison ---------- */
-.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:start}
-@media(max-width:820px){.story{grid-template-columns:1fr}}
-.story p{font-family:var(--display);font-size:clamp(17px,1.8vw,21px);line-height:1.65;color:var(--fume-doux);margin:0 0 20px;max-width:44ch}
-.sign{font-family:var(--display);font-style:italic;font-weight:200;font-size:24px;margin-top:32px;color:var(--fume)}
 
 /* ---------- fiche ---------- */
 .fiche{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--trait)}
 .fiche div{padding:26px 0;border-bottom:1px solid var(--trait)}
-.fiche dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--velours);margin-bottom:8px}
+.fiche dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sable);margin-bottom:8px}
 .fiche dd{margin:0;font-family:var(--display);font-size:20px;font-weight:300}
 @media(max-width:760px){.fiche{grid-template-columns:1fr 1fr}}
 @media(max-width:420px){.fiche{grid-template-columns:1fr}}
@@ -186,30 +203,30 @@ h1 .ital{display:block;color:var(--velours)}
 /* ---------- cta ---------- */
 .cta-in{text-align:center;max-width:620px;margin:0 auto}
 .cta-in h2{font-family:var(--display);font-weight:200;font-size:clamp(30px,4.4vw,52px);line-height:1.1;letter-spacing:-.02em;margin:0 0 18px}
-.cta-in p{color:var(--argent);margin:0 0 36px}
+.cta-in p{color:var(--paper-deep);margin:0 0 36px}
 form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 input[type=email]{
   flex:1 1 280px;max-width:340px;
-  background:transparent;border:0;border-bottom:1px solid rgba(233,231,225,.35);
-  color:var(--calcaire-clair);font-family:var(--util);font-size:15px;padding:12px 2px;
+  background:transparent;border:0;border-bottom:1px solid rgba(241,233,218,.35);
+  color:var(--paper);font-family:var(--util);font-size:15px;padding:12px 2px;
 }
-input[type=email]::placeholder{color:rgba(233,231,225,.45)}
-input[type=email]:focus{outline:0;border-bottom-color:var(--immortelle)}
+input[type=email]::placeholder{color:rgba(241,233,218,.45)}
+input[type=email]:focus{outline:0;border-bottom-color:var(--terracotta-soft)}
 button{
-  background:var(--immortelle);color:var(--fume);border:0;
+  background:var(--terracotta);color:var(--paper);border:0;
   font-family:var(--util);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
   padding:15px 30px;cursor:pointer;transition:background .3s;
 }
-button:hover{background:#E4C24E}
-.note{font-size:12px;color:var(--argent);margin-top:22px}
+button:hover{background:var(--terracotta-soft)}
+.note{font-size:12px;color:var(--paper-deep);margin-top:22px}
 
 /* ---------- footer ---------- */
-footer{background:var(--fume);color:var(--argent);padding:0 0 56px;font-size:13px}
-.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(233,231,225,.16)}
+footer{background:var(--ink);color:var(--sable);padding:0 0 56px;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(241,233,218,.16)}
 footer a{text-decoration:none}
-footer a:hover{color:var(--calcaire-clair)}
+footer a:hover{color:var(--paper)}
 
-:focus-visible{outline:2px solid var(--immortelle);outline-offset:3px}
+:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -221,12 +238,12 @@ footer a:hover{color:var(--calcaire-clair)}
 
 <header>
   <div class="wrap bar">
-    <div class="mark">By <em>Julie</em></div>
+    <div class="mark">AUBE <em>· Maison J</em></div>
     <nav>
-      <a href="#effets">Le soin</a>
+      <a href="#effets">Le rituel</a>
+      <a href="#histoire">Mon histoire</a>
       <a href="#formule">La formule</a>
-      <a href="#maison">La maison</a>
-      <a href="#reserver">Réserver</a>
+      <a href="#reserver">Commander</a>
     </nav>
   </div>
 </header>
@@ -235,24 +252,76 @@ footer a:hover{color:var(--calcaire-clair)}
 <section class="hero">
   <div class="wrap hero-in">
     <div>
-      <p class="eyebrow rv">Soin concentré éclat · Provence</p>
-      <h1 class="rv">Le Soin<span class="ital">des Collines</span></h1>
-      <p class="lede rv">Une texture fraîche qui fond sur la peau, la lisse et la réveille. Un seul geste, le matin, et le teint suit.</p>
+      <p class="eyebrow rv">Maison J · Provence</p>
+      <h1 class="rv">Aube</h1>
+      <p class="lede rv">Crème visage à l'immortelle sauvage de Méditerranée. Un concentré de lumière inspiré par un matin d'été en Provence — pour commencer chaque journée avec un peu de soleil sur le visage.</p>
       <div class="meta rv">
         <span>30 ml</span>
-        <span>Verre dépoli</span>
+        <span>Verre ambré</span>
         <b>29 €</b>
       </div>
     </div>
 
     <div class="jar-stage rv">
       <div class="halo" aria-hidden="true"></div>
-      <div class="jar-photo-wrap">
-        <img id="face-avant" class="jar-photo" src="pot-face.jpg" alt="Pot Le Soin des Collines, face avant avec l'étiquette By Julie, Provence">
-        <img id="face-arriere" class="jar-photo" src="pot-dos.jpg" alt="Dos du pot Le Soin des Collines, texte de présentation de l'immortelle et signature Julie" style="display:none">
-      </div>
+      <svg class="jar" viewBox="0 0 320 400" role="img" aria-label="Pot AUBE, crème visage à l'immortelle, verre ambré et couvercle noir">
+        <defs>
+          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0"    stop-color="#2E1C0E"/>
+            <stop offset=".14"  stop-color="#57371C"/>
+            <stop offset=".38"  stop-color="#7A5128"/>
+            <stop offset=".64"  stop-color="#6B4423"/>
+            <stop offset=".86"  stop-color="#4A2E16"/>
+            <stop offset="1"    stop-color="#2A1A0C"/>
+          </linearGradient>
+          <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0"   stop-color="#0C0906"/>
+            <stop offset=".5"  stop-color="#231A12"/>
+            <stop offset="1"   stop-color="#0C0906"/>
+          </linearGradient>
+          <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0"   stop-color="#3A2A1C"/>
+            <stop offset="1"   stop-color="#120D08"/>
+          </linearGradient>
+          <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#FFFFFF" stop-opacity=".35"/>
+            <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".08"/>
+            <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="shadow" cx=".5" cy=".5" r=".5">
+            <stop offset="0"   stop-color="#2B2013" stop-opacity=".30"/>
+            <stop offset="1"   stop-color="#2B2013" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
 
-      <button class="flip" type="button" aria-pressed="false">Voir le dos du pot</button>
+        <ellipse cx="160" cy="352" rx="118" ry="19" fill="url(#shadow)"/>
+
+        <!-- corps -->
+        <path d="M62 132 h196 v168 a26 26 0 0 1 -26 26 h-144 a26 26 0 0 1 -26 -26 z" fill="url(#glass)"/>
+        <ellipse cx="160" cy="132" rx="98" ry="14" fill="#3A2614"/>
+
+        <!-- couvercle -->
+        <rect x="54" y="52" width="212" height="74" rx="7" fill="url(#lid)"/>
+        <ellipse cx="160" cy="52" rx="106" ry="13" fill="url(#top)"/>
+        <ellipse cx="160" cy="52" rx="106" ry="13" fill="none" stroke="#000" stroke-opacity=".5"/>
+        <rect x="54" y="120" width="212" height="6" rx="3" fill="#000" opacity=".35"/>
+
+        <!-- reflet -->
+        <g class="sheen">
+          <rect x="84" y="60" width="15" height="250" rx="8" fill="url(#shine)"/>
+          <rect x="108" y="66" width="5" height="236" rx="3" fill="url(#shine)" opacity=".55"/>
+        </g>
+
+        <!-- étiquette -->
+        <rect x="90" y="192" width="140" height="112" fill="#F1E9DA" opacity=".97"/>
+        <text x="160" y="222" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="20" letter-spacing="2" fill="#2B2013">AUBE</text>
+        <line x1="132" y1="232" x2="188" y2="232" stroke="#B85C2E"/>
+        <text x="160" y="248" text-anchor="middle" font-family="Archivo, sans-serif" font-size="6" fill="#4A3826" letter-spacing="1.2">CRÈME VISAGE À L'IMMORTELLE</text>
+        <text x="160" y="260" text-anchor="middle" font-family="Archivo, sans-serif" font-size="6" fill="#A68A63" letter-spacing="1.6">NOURRIT · PROTÈGE · APAISE</text>
+        <text x="160" y="278" text-anchor="middle" font-family="Archivo, sans-serif" font-size="5.5" fill="#4A3826" letter-spacing="1">IMMORTELLE SAUVAGE</text>
+        <text x="160" y="288" text-anchor="middle" font-family="Archivo, sans-serif" font-size="5.5" fill="#4A3826" letter-spacing="1">DE MÉDITERRANÉE</text>
+        <text x="160" y="300" text-anchor="middle" font-family="Archivo, sans-serif" font-size="6" fill="#A68A63" letter-spacing="1.8">BY MAISON · J</text>
+      </svg>
     </div>
   </div>
 </section>
@@ -261,15 +330,149 @@ footer a:hover{color:var(--calcaire-clair)}
 <section class="dark" id="effets">
   <div class="wrap sec">
     <div class="sec-head rv">
-      <p class="eyebrow">Le matin</p>
-      <h2>Ce que la peau fait dans les minutes qui suivent.</h2>
+      <p class="eyebrow">Le rituel du matin</p>
+      <h2>Un moment suspendu, chaque matin.</h2>
     </div>
 
     <div class="effets">
-      <div class="effet rv"><div class="tps">À l'application</div><p>La texture fraîche fond immédiatement. Pas de film, pas de tiraillement, rien à faire pénétrer longuement.</p></div>
-      <div class="effet rv"><div class="tps">Après 1 minute</div><p>Le grain de peau paraît plus lisse, les petites irrégularités s'estompent, le teint s'éclaire.</p></div>
-      <div class="effet rv"><div class="tps">Fini</div><p>Velouté et net. Ça ne colle pas, ça ne peluche pas — le maquillage se pose juste après.</p></div>
-      <div class="effet rv"><div class="tps">Jour après jour</div><p>La peau est confortable, plus régulière, plus lumineuse. Un seul produit, tous les matins.</p></div>
+      <div class="effet rv"><div class="tps">À l'application</div><p>La texture fraîche fond immédiatement. Un souffle de douceur, la promesse d'un matin d'été en Provence.</p></div>
+      <div class="effet rv"><div class="tps">Après 1 minute</div><p>Le grain de peau paraît plus lisse, le teint s'unifie, la lumière dorée semble déjà caresser la peau.</p></div>
+      <div class="effet rv"><div class="tps">Fini</div><p>Un éclat immédiat, une peau nourrie et apaisée — prête à recevoir le soleil de la journée.</p></div>
+      <div class="effet rv"><div class="tps">Jour après jour</div><p>La peau est visiblement plus lisse, plus régulière, plus lumineuse. Un rituel, pas une corvée.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section id="histoire">
+  <div class="wrap sec">
+    <div class="hist-head rv">
+      <p class="eyebrow">Mon histoire</p>
+      <h2>Une histoire<br>de lumière</h2>
+      <svg class="sprig top-right" viewBox="0 0 120 140" aria-hidden="true">
+        <g fill="none" stroke="#A68A63" stroke-width="1">
+          <path d="M60 138 C58 100 62 60 66 8"/>
+          <path d="M66 40 C78 34 88 24 92 10"/>
+          <path d="M63 60 C50 55 40 46 34 32"/>
+          <path d="M65 84 C76 80 85 72 90 60"/>
+        </g>
+        <g fill="#A68A63" opacity=".8">
+          <circle cx="92" cy="9" r="3"/><circle cx="100" cy="14" r="2.4"/><circle cx="86" cy="16" r="2.2"/>
+          <circle cx="33" cy="31" r="2.6"/><circle cx="26" cy="26" r="2.1"/>
+          <circle cx="90" cy="59" r="2.6"/><circle cx="98" cy="54" r="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="spread">
+      <!-- page 1 -->
+      <div class="col rv">
+        <p>Depuis plus de 17 ans, je prends soin de la peau des femmes. Au fil des années, à travers chaque soin, chaque massage facialiste et chaque rencontre, j'ai appris à écouter la peau, à comprendre ses besoins, mais aussi à observer ce qui la révèle vraiment.</p>
+        <p>Une peau lumineuse ne se résume jamais à une liste d'ingrédients. C'est une peau respectée, nourrie, accompagnée avec justesse.</p>
+
+        <div class="jar-illus-wrap">
+          <svg class="jar-illus" viewBox="0 0 220 260" role="img" aria-label="Pot AUBE ouvert, crème visible, couvercle posé à côté">
+            <defs>
+              <linearGradient id="glass2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#2E1C0E"/><stop offset=".4" stop-color="#7A5128"/><stop offset="1" stop-color="#2A1A0C"/>
+              </linearGradient>
+              <radialGradient id="cream" cx=".4" cy=".3" r=".8">
+                <stop offset="0" stop-color="#FFFDF7"/><stop offset="1" stop-color="#E6DCC4"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="150" cy="238" rx="46" ry="8" fill="#2B2013" opacity=".18"/>
+            <ellipse cx="60" cy="230" rx="34" ry="7" fill="#2B2013" opacity=".12"/>
+            <!-- lid tilted -->
+            <ellipse cx="58" cy="212" rx="36" ry="11" fill="#0C0906"/>
+            <ellipse cx="58" cy="206" rx="36" ry="11" fill="#231A12"/>
+            <!-- jar -->
+            <path d="M104 130 h92 v78 a24 24 0 0 1 -24 24 h-44 a24 24 0 0 1 -24 -24 z" fill="url(#glass2)"/>
+            <path d="M100 118 C100 106 116 98 150 98 C184 98 200 106 200 118 C200 128 184 134 150 134 C116 134 100 128 100 118 Z" fill="url(#cream)"/>
+            <path d="M112 112 C118 104 132 100 150 100 C168 100 180 104 186 110" fill="none" stroke="#F6EFE0" stroke-width="2" opacity=".8"/>
+            <text x="150" y="196" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" letter-spacing="1.6" fill="#F1E9DA">AUBE</text>
+            <text x="150" y="212" text-anchor="middle" font-family="Archivo, sans-serif" font-size="5" letter-spacing="1" fill="#D8CDB6">NOURRIT · PROTÈGE · APAISE</text>
+          </svg>
+        </div>
+
+        <p>Après toutes ces années d'expérience, une évidence s'est imposée à moi : créer le soin que j'avais toujours rêvé d'utiliser moi-même.</p>
+
+        <strong>Pas une crème de plus.</strong>
+        <p>Un soin quotidien, pensé dans les moindres détails, qui réunit tout ce que je considère comme essentiel.</p>
+
+        <ul>
+          <li>Une hydratation profonde.</li>
+          <li>Une peau visiblement plus lisse.</li>
+          <li>Un éclat immédiat.</li>
+          <li>Une texture fraîche et sensorielle.</li>
+          <li>Un parfum délicat, léger, qui accompagne le geste sans jamais le dominer.</li>
+        </ul>
+
+        <p>Un soin efficace, mais avant tout un soin que l'on prend plaisir à appliquer chaque matin.</p>
+
+        <hr class="rule">
+
+        <p>Chaque choix de formulation a été guidé par cette exigence. J'ai choisi l'immortelle, véritable trésor de la Méditerranée, que l'on surnomme l'or de la Provence. Une fleur aux propriétés exceptionnelles, reconnue pour ses bienfaits sur la peau et que j'utilise depuis des années lors de mes soins facialistes.</p>
+      </div>
+
+      <!-- page 2 -->
+      <div class="col rv">
+        <p>Je l'ai associée à la niacinamide, un actif incontournable pour lisser le grain de peau, renforcer la barrière cutanée, unifier le teint et révéler durablement son éclat naturel.</p>
+        <p>Cette association est née de mon expérience du terrain, de centaines de visages observés et soignés au fil des années.</p>
+
+        <hr class="rule">
+
+        <p>Mais au-delà de sa formule, ce soin raconte surtout une émotion. Je voulais capturer cette sensation si particulière d'un matin d'été en Provence.</p>
+
+        <p class="lines">La chaleur douce des premiers rayons.<br>La lumière dorée qui caresse la peau.<br>Le calme. L'air encore frais.<br>Cette énergie solaire qui nous accompagne toute la journée.<br>J'avais envie d'enfermer un peu de cette lumière dans un pot.</p>
+
+        <div class="deco">
+          <svg viewBox="0 0 260 180" role="img" aria-label="Poterie provençale et brindilles séchées">
+            <g fill="none" stroke="#8A6A42" stroke-width="1.2">
+              <path d="M50 170 V110 C50 96 40 92 40 78 C40 62 56 54 56 40 C56 30 50 26 50 18" />
+              <ellipse cx="50" cy="18" rx="14" ry="6"/>
+              <path d="M36 78 h-16" /><path d="M64 92 h16" />
+            </g>
+            <g fill="none" stroke="#A68A63" stroke-width="1">
+              <path d="M150 170 C150 120 156 70 168 20"/>
+              <path d="M168 50 C182 44 194 32 200 16"/>
+              <path d="M156 90 C142 84 130 74 122 58"/>
+              <path d="M162 118 C176 112 188 100 194 84"/>
+            </g>
+            <g fill="#C97A44" opacity=".85">
+              <circle cx="200" cy="15" r="3"/><circle cx="208" cy="20" r="2.4"/><circle cx="192" cy="22" r="2.2"/>
+              <circle cx="121" cy="57" r="2.6"/><circle cx="114" cy="52" r="2"/>
+              <circle cx="194" cy="83" r="2.6"/><circle cx="202" cy="78" r="2"/>
+            </g>
+          </svg>
+        </div>
+
+        <p>Qu'à chaque application, chaque femme retrouve ce moment suspendu. Quelques secondes pour elle, où le soin devient un rituel, un souffle de douceur, une promesse d'éclat.</p>
+
+        <hr class="rule">
+
+        <p>Parce que je crois profondément que prendre soin de sa peau, c'est aussi prendre soin de soi.</p>
+        <p>Ce soin est né pour les femmes qui aiment la simplicité, les beaux ingrédients et les gestes sincères. Pour celles qui recherchent autant l'efficacité que le plaisir. Pour celles qui ont le cœur gorgé de soleil, l'âme tournée vers la lumière et qui savent que la beauté commence toujours par une sensation.</p>
+
+        <div class="quote">
+          <p>Aujourd'hui, je suis fière de vous présenter bien plus qu'une crème.</p>
+          <p>Je vous présente un rituel quotidien.</p>
+          <p>Un concentré de lumière inspiré par la Provence.</p>
+          <p>Une invitation à commencer chaque journée avec une peau éclatante, un geste authentique… et un peu de soleil sur le visage.</p>
+        </div>
+
+        <div class="deco">
+          <svg viewBox="0 0 220 110" role="img" aria-label="Bols en céramique avec fleurs séchées">
+            <ellipse cx="70" cy="86" rx="52" ry="16" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
+            <path d="M18 86 C18 74 42 68 70 68 C98 68 122 74 122 86" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
+            <ellipse cx="150" cy="70" rx="36" ry="11" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
+            <path d="M114 70 C114 61 130 56 150 56 C170 56 186 61 186 70" fill="none" stroke="#8A6A42" stroke-width="1.2"/>
+            <g fill="#C97A44" opacity=".85">
+              <circle cx="140" cy="60" r="2.4"/><circle cx="148" cy="56" r="2"/><circle cx="156" cy="61" r="2.2"/>
+              <circle cx="60" cy="74" r="2"/><circle cx="70" cy="72" r="2.4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -285,45 +488,25 @@ footer a:hover{color:var(--calcaire-clair)}
     <div class="duo">
       <div class="actif rv">
         <svg class="glyph" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
-          <circle cx="23" cy="23" r="6.5" fill="#D6B23C"/>
-          <g stroke="#D6B23C" stroke-width="1.5" fill="none">
+          <circle cx="23" cy="23" r="6.5" fill="#C97A44"/>
+          <g stroke="#C97A44" stroke-width="1.5" fill="none">
             <path d="M23 16V4M23 30v12M16 23H4M30 23h12M18 18 9.5 9.5M28 28l8.5 8.5M28 18l8.5-8.5M18 28 9.5 36.5"/>
           </g>
         </svg>
         <h3>Immortelle</h3>
-        <p class="lat">Helichrysum italicum</p>
-        <p>La fleur des collines sèches, qui garde sa couleur une fois coupée. Une plante emblématique de la Méditerranée, récoltée ici, et le cœur de ce soin.</p>
+        <p class="lat">Helichrysum italicum — l'or de la Provence</p>
+        <p>La fleur qui ne fane pas. Née dans les collines sèches de Provence, elle garde sa couleur longtemps après la récolte. Un trésor de la Méditerranée, reconnu pour ses bienfaits sur la peau.</p>
       </div>
 
       <div class="actif rv">
         <svg class="glyph" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
-          <circle cx="23" cy="23" r="17" fill="none" stroke="#6A6E5E" stroke-width="1.5"/>
-          <circle cx="23" cy="23" r="9" fill="none" stroke="#6A6E5E" stroke-width="1.5"/>
-          <circle cx="23" cy="23" r="3" fill="#6A6E5E"/>
+          <circle cx="23" cy="23" r="17" fill="none" stroke="#8A6A42" stroke-width="1.5"/>
+          <circle cx="23" cy="23" r="9" fill="none" stroke="#8A6A42" stroke-width="1.5"/>
+          <circle cx="23" cy="23" r="3" fill="#8A6A42"/>
         </svg>
         <h3>Niacinamide</h3>
         <p class="lat">Vitamine B3</p>
-        <p>L'actif qui travaille la qualité de la peau dans la durée : éclat, régularité du teint, confort. C'est lui qui fait la différence au fil des semaines.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- MAISON -->
-<section id="maison">
-  <div class="wrap sec">
-    <div class="story">
-      <div class="rv">
-        <p class="eyebrow">La maison</p>
-        <h2 class="serif" style="font-size:clamp(30px,4.2vw,50px);font-weight:200;line-height:1.13;margin:0;letter-spacing:-.02em">Je voulais le soin que j'avais envie d'utiliser tous les matins.</h2>
-      </div>
-      <div class="rv">
-        <p>Pas une crème de plus. Un produit qui hydrate, oui, mais qui donne tout de suite une peau plus belle — et qui donne envie d'être appliqué.</p>
-        <p>Je l'ai imaginé pour les femmes qui ont une vie remplie et qui ne veulent pas passer une heure devant leur miroir. Efficace, rapide, et agréable. Les trois à la fois.</p>
-        <p>Tout se fait en Provence : la formule, la fabrication, le remplissage. Le pot en verre dépoli blanc, la senteur légère et fraîche font partie du soin autant que la texture.</p>
-        <p class="sign">Julie</p>
+        <p>L'actif incontournable pour lisser le grain de peau, renforcer la barrière cutanée, unifier le teint et révéler durablement son éclat naturel.</p>
       </div>
     </div>
   </div>
@@ -335,7 +518,7 @@ footer a:hover{color:var(--calcaire-clair)}
     <p class="eyebrow rv">Le produit</p>
     <dl class="fiche rv">
       <div><dt>Contenance</dt><dd>30 ml</dd></div>
-      <div><dt>Contenant</dt><dd>Verre dépoli blanc</dd></div>
+      <div><dt>Contenant</dt><dd>Verre ambré</dd></div>
       <div><dt>Fabrication</dt><dd>Provence, France</dd></div>
       <div><dt>Prix</dt><dd>29 €</dd></div>
       <div><dt>Usage</dt><dd>Le matin</dd></div>
@@ -352,8 +535,8 @@ footer a:hover{color:var(--calcaire-clair)}
     <div class="cta-in rv">
       <p class="eyebrow">Premières séries</p>
       <h2>Soyez prévenue de l'ouverture.</h2>
-      <p>Les premiers pots partent en série limitée, en pharmacie en Provence et ici. Laissez votre adresse, nous vous écrivons quand ils arrivent.</p>
-      <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:Newsreader,serif;font-size:22px;font-style:italic;color:#E9E7E1;margin:0\'>C\'est noté. À très vite.</p>'">
+      <p>Les premiers pots AUBE partent en série limitée. Laissez votre adresse, nous vous écrivons quand ils arrivent.</p>
+      <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:Newsreader,serif;font-size:22px;font-style:italic;color:#F1E9DA;margin:0\'>C\'est noté. À très vite.</p>'">
         <label for="mail" style="position:absolute;left:-9999px">Adresse e-mail</label>
         <input id="mail" type="email" required placeholder="votre@email.fr">
         <button type="submit">Me prévenir</button>
@@ -365,8 +548,8 @@ footer a:hover{color:var(--calcaire-clair)}
 
 <footer>
   <div class="wrap foot">
-    <div class="mark" style="color:var(--calcaire-clair)">By <em>Julie</em></div>
-    <div>Le Soin des Collines · 30 ml · Fabriqué en Provence</div>
+    <div class="mark" style="color:var(--paper)">AUBE <em>· Maison J</em></div>
+    <div>AUBE · Crème visage à l'immortelle · 30 ml · Fabriqué en Provence</div>
     <div><a href="#">Mentions légales</a> · <a href="#">Contact</a> · <a href="#">Instagram</a></div>
   </div>
 </footer>
@@ -379,24 +562,6 @@ const io=new IntersectionObserver((es)=>{
 document.querySelectorAll('.rv').forEach((el,i)=>{
   el.style.transitionDelay=(Math.min(i,6)*70)+'ms';
   io.observe(el);
-});
-
-const btn=document.querySelector('.flip');
-const jar=document.querySelector('.jar-photo-wrap');
-const av=document.getElementById('face-avant');
-const ar=document.getElementById('face-arriere');
-let dos=false;
-btn.addEventListener('click',()=>{
-  dos=!dos;
-  jar.style.transition='transform .45s ease';
-  jar.style.transform='scaleX(.04)';
-  setTimeout(()=>{
-    av.style.display=dos?'none':'';
-    ar.style.display=dos?'':'none';
-    jar.style.transform='scaleX(1)';
-  },300);
-  btn.textContent=dos?'Voir la face avant':'Voir le dos du pot';
-  btn.setAttribute('aria-pressed',dos);
 });
 </script>
 </body>
