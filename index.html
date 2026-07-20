@@ -428,6 +428,7 @@ footer a:hover{color:var(--paper)}
       <form id="cta-form">
         <label for="mail" style="position:absolute;left:-9999px">Adresse e-mail</label>
         <input id="mail" type="email" required placeholder="votre@email.fr">
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <button type="submit">Me prévenir</button>
       </form>
       <p class="note" id="cta-note">Une seule adresse, aucun partage, désinscription en un clic.</p>
@@ -469,6 +470,7 @@ const ctaForm=document.getElementById('cta-form');
 ctaForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
   const email=document.getElementById('mail').value.trim();
+  const company=document.getElementById('company').value;
   const btn=ctaForm.querySelector('button');
   const originalLabel=btn.textContent;
   btn.disabled=true;
@@ -477,7 +479,7 @@ ctaForm.addEventListener('submit', async (e)=>{
     const res=await fetch('/api/subscribe',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email, source:arrivalSource(), page:window.location.pathname})
+      body:JSON.stringify({email, company, source:arrivalSource(), page:window.location.pathname})
     });
     if(!res.ok) throw new Error('request_failed');
     ctaForm.outerHTML='<p style="font-family:Newsreader,serif;font-size:22px;font-style:italic;color:#F1E9DA;margin:0">C\'est noté. À très vite.</p>';

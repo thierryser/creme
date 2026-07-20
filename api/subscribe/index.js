@@ -1,7 +1,53 @@
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const ALLOWED_HOSTS = ["brave-grass-019d47503.7.azurestaticapps.net"];
+
+// Anti-abus basique en mémoire (par instance) : max 5 requêtes / 10 min / IP.
+const hits = new Map();
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_HITS = 5;
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entry = hits.get(ip);
+  if (!entry || now - entry.start > WINDOW_MS) {
+    hits.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > MAX_HITS;
+}
+
+function originAllowed(req) {
+  const originHeader = req.headers.origin || req.headers.referer || "";
+  if (!originHeader) return false;
+  try {
+    const host = new URL(originHeader).hostname;
+    return ALLOWED_HOSTS.includes(host);
+  } catch (e) {
+    return false;
+  }
+}
 
 module.exports = async function (context, req) {
+  if (!originAllowed(req)) {
+    context.res = { status: 403, headers: { "Content-Type": "application/json" }, body: { error: "origine_refusee" } };
+    return;
+  }
+
+  const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "unknown";
+  if (isRateLimited(ip)) {
+    context.res = { status: 429, headers: { "Content-Type": "application/json" }, body: { error: "trop_de_requetes" } };
+    return;
+  }
+
   const body = req.body || {};
+
+  // Honeypot : champ invisible que seuls les bots remplissent.
+  if (typeof body.company === "string" && body.company.trim() !== "") {
+    context.res = { status: 200, headers: { "Content-Type": "application/json" }, body: { ok: true } };
+    return;
+  }
+
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const source = typeof body.source === "string" ? body.source.slice(0, 200) : "";
   const page = typeof body.page === "string" ? body.page.slice(0, 200) : "";
